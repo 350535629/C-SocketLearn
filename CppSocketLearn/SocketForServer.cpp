@@ -7,14 +7,14 @@
 #define SERVPORT 80000
 #define BACKLOG 10
 
-void main()
+int main()
 {
 
     int sockfd,client_fd;
 
     struct sockaddr_in my_addr;
     struct sockaddr_in remote_addr;
-    char * msg = "You are Welcome!\n"
+    char * msg = "You are Welcome!\n";
     if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) == -1)
     {
         printf("socket error!");
@@ -39,7 +39,7 @@ void main()
 
     while(1)
     {
-        sin_size = sizeof(struct sockaddr_in);
+        int sin_size = sizeof(struct sockaddr_in);
 
         if((client_fd = accept(sockfd,(struct sockaddr *)&remote_addr,&sin_size))==-1)
         {

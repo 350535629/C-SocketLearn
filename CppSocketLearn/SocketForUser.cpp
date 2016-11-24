@@ -7,7 +7,7 @@
 #define SERVPORT 8000
 #define MAXDATASIZE 100
 
-void main(int argc,char *argv[])
+int main(int argc,char *argv[])
 {
     int sockfd,recvbytes;
     char buf[MAXDATASIZE] = {0};
